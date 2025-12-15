@@ -1,4 +1,4 @@
-# MCP Servers Collection
+<!-- # MCP Servers Collection
 
 一个 MCP (Model Context Protocol) Servers 的集合,用于为 AI 助手提供视频/音频内容总结能力。
 
@@ -216,4 +216,4 @@ Create .env in your project root:
 ```bash
 cp .env.example .env
 # Edit .env and add your API keys
-```
+``` -->

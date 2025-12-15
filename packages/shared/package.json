@@ -1,0 +1,40 @@
+{
+  "name": "@mcp-servers/shared",
+  "version": "0.1.0",
+  "private": "false",
+  "author": "developerzht@gmail.com",
+  "description": "Shared utilities for MCP servers",
+  "keywords": [
+    "mcp",
+    "ai",
+    "shared"
+  ],
+  "main": "./dist/index.js",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/developer-zht/mcp-servers.git",
+    "directory": "packages/shared"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./utils/*": {
+      "types": "./dist/utils/*.d.ts",
+      "import": "./dist/utils/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "rm -rf dist",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "catalog:common",
+    "@types/node": "catalog:common"
+  }
+}

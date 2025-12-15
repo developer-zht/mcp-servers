@@ -1,0 +1,70 @@
+{
+  "name": "mcp-servers",
+  "version": "0.1.0",
+  "author": "developerzht@gmail.com",
+  "description": "A collection of MCP (Model Context Protocol) servers for AI-powered content summarization",
+  "keywords": [
+    "mcp",
+    "ai"
+  ],
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist",
+    ".env.example",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/developer-zht/mcp-servers.git"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.25.0",
+  "scripts": {
+    "build": "pnpm -r --filter './packages/**' run build",
+    "dev": "pnpm -r --parallel --filter './packages/**' run dev",
+    "test": "pnpm -r run test",
+    "lint": "eslint \"packages/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"packages/**/*.{ts,tsx}\" --fix",
+    "format": "prettier --write \"packages/**/*.{ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"packages/**/*.{ts,tsx,json,md}\"",
+    "clean": "pnpm -r run clean && rm -rf node_modules",
+    "prepare": "husky",
+    "commit": "cz"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
+    "commitizen": "^4.3.1",
+    "cz-git": "^1.12.0",
+    "eslint": "^9.39.2",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.49.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  }
+}

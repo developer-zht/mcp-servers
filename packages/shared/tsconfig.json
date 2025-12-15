@@ -1,0 +1,23 @@
+{
+  // 继承根配置
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    // 输出目录
+    "outDir": "./dist",
+    "rootDir": "./src",
+    // 库模式: 生成类型定义文件
+    "declaration": true,
+    "declarationMap": true,
+    // 保持模块结构 (不打包成单个文件)
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+
+    // 启用复合项目模式，支持 Project References
+    // 必须启用才能使用项目引用和增量编译
+    "composite": true
+  },
+  // 包含的源文件
+  "include": ["src/**/*"],
+  // 排除
+  "exclude": ["node_modules", "dist"]
+}

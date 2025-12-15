@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Root Base",
+  // 这是"基础配置",不会直接用于编译
+  // 所有子包的 tsconfig.json 都会继承这个配置
+  "compilerOptions": {
+    /* 语言与环境 */
+    "target": "ES2022", // 目标 JS 版本 (Node 20+ 支持)
+    "lib": ["ES2022"], // 标准库 (不包含 DOM)
+    // module: "NodeNext" → 根据 package.json "type" 字段决定!
+    // 如果 "type": "module" → 输出 ESM
+    // 如果 "type": "commonjs" → 输出 CommonJS
+    "module": "NodeNext", // 模块系统 (支持 ESM 和 CJS) - 输出什么格式
+    "moduleResolution": "NodeNext", // 模块解析策略 - 如何找模块
+    /* 类型检查 */
+    "strict": true, // 启用所有严格类型检查
+    "noUncheckedIndexedAccess": true, // 数组索引访问可能是 undefined
+    "noImplicitOverride": true, // 必须显式声明 override
+    "esModuleInterop": true, // 兼容 CommonJS 导入, 作用: 允许 import fs from 'fs' (而不是 import * as fs)
+    "skipLibCheck": true, // 跳过 .d.ts 文件检查 (提升性能)
+    /* 输出 */
+    "declaration": true, // 生成 .d.ts 类型定义文件
+    "declarationMap": true, // 生成 .d.ts.map (便于调试)
+    "sourceMap": true, // 生成 .js.map (便于调试)
+    "removeComments": true, // 移除注释 (减小体积)
+    /* 互操作性 */
+    "allowSyntheticDefaultImports": true, // 允许默认导入没有默认导出的模块
+    "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
+    "resolveJsonModule": true, // 允许导入 .json 文件
+    /* 路径映射 - 让子包可以方便地引用其他包 */
+    "baseUrl": ".",
+    "paths": {
+      "@mcp-servers/shared": ["./packages/shared/src/index.ts"],
+      "@mcp-servers/shared/*": ["./packages/shared/src/*"]
+    }
+  },
+
+  // ✅ references: 声明有哪些子项目
+  "references": [{ "path": "./packages/shared" }, { "path": "./packages/bilibili-summarizer" }],
+
+  // 默认排除的文件
+  "exclude": ["**/node_modules", "**/dist", "**/build"]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@mcp-servers/bilibili-summarizer",
+  "version": "0.1.0",
+  "private": "false",
+  "author": "developerzht@gmail.com",
+  "description": "MCP Server for summarizing Bilibili videos using AI",
+  "keywords": [
+    "mcp",
+    "bilibili",
+    "ai",
+    "summarize"
+  ],
+  "main": "./dist/index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/developer-zht/mcp-servers.git",
+    "directory": "packages/bilibili-summarizer"
+  },
+  "bin": {
+    "bilibili-summarizer": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@mcp-servers/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:common",
+    "@types/node": "catalog:common"
+  }
+}

@@ -17,12 +17,44 @@ catalogs:
   common:
     typescript: ^5.9.3
     '@types/node': ^24.10.2
+    globals: ^16.1.0
+    tsx: ^4.10.0
 
-  # shared
-  # shared:
+  # 开发工具
+  lint:
+    eslint: ^9.39.2
+    '@eslint/js': ^9.39.2
+    '@typescript-eslint/eslint-plugin': ^8.49.0
+    '@typescript-eslint/parser': ^8.49.0
+    'typescript-eslint': ^8.49.0
 
-  # bilibili-summarizer
-  # bilibili-summarizer:
+  # 格式化工具
+  format:
+    prettier: ^3.7.4
+
+  # Git 工具
+  git:
+    husky: ^9.1.7
+    'lint-staged': ^16.2.7
+    '@commitlint/cli': ^20.2.0
+    '@commitlint/config-conventional': ^20.2.0
+    commitizen: ^4.3.1
+    'cz-git': ^1.12.0
+
+  # 测试工具
+  test:
+    vitest: ^4.0.0
+
+  # MCP 相关包
+  mcp:
+    '@modelcontextprotocol/sdk': ^1.25.0
+    zod: ^3.24.1 # MCP SDK 常用的依赖
+
+    # shared
+    # shared:
+
+    # bilibili-summarizer
+    # bilibili-summarizer:
 
   # # 前端依赖
   # frontend:
@@ -49,11 +81,12 @@ catalogs:
   #   react-router-dom: ^6.21.0
   #   zustand: ^4.4.7
 
-  # 构建工具
-  build-tools:
-    vite: ^5.0.11
-    rollup: ^4.9.5
-    esbuild: ^0.19.11
+  # 代码质量
+  linting:
+    eslint: ^8.56.0
+    prettier: ^3.2.0
+    '@typescript-eslint/eslint-plugin': ^6.19.0
+    '@typescript-eslint/parser': ^6.19.0
 
   # 测试工具
   testing:
@@ -61,12 +94,12 @@ catalogs:
     '@testing-library/vue': ^8.0.0
     '@testing-library/react': ^14.1.2
 
-  # 代码质量
-  linting:
-    eslint: ^8.56.0
-    prettier: ^3.2.0
-    '@typescript-eslint/eslint-plugin': ^6.19.0
-    '@typescript-eslint/parser': ^6.19.0
+  # 构建工具
+  build-tools:
+    vite: ^5.0.11
+    rollup: ^4.9.5
+    esbuild: ^0.19.11
+
 # 问题:传统方式维护困难
 # packages/a/package.json: "vue": "^3.5.15"
 # packages/b/package.json: "vue": "^3.5.15"

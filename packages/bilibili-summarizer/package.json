@@ -27,10 +27,9 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@mcp-servers/shared": "workspace:*"
+    "@mcp-servers/shared": "workspace:*",
+    "@modelcontextprotocol/sdk": "catalog:mcp",
+    "zod": "catalog:mcp"
   },
-  "devDependencies": {
-    "typescript": "catalog:common",
-    "@types/node": "catalog:common"
-  }
+  "devDependencies": {}
 }

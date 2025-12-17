@@ -33,8 +33,5 @@
     "dev": "tsc --watch"
   },
   "dependencies": {},
-  "devDependencies": {
-    "typescript": "catalog:common",
-    "@types/node": "catalog:common"
-  }
+  "devDependencies": {}
 }

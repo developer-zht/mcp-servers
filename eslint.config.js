@@ -21,9 +21,9 @@
 // }
 
 // eslint.config.js
-import js from '@eslint/js';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import js from '@eslint/js'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 export default [
   // 1️⃣ 忽略目录（等价于 ignorePatterns）
@@ -51,7 +51,7 @@ export default [
       parserOptions: {
         ecmaVersion: 2022,
         sourceType: 'module',
-        project: ['./packages/*/tsconfig.eslint.json'],
+        project: ['./packages/*/tsconfig.eslint.json', './tsconfig.eslint.json'],
       },
     },
     rules: {
@@ -64,4 +64,4 @@ export default [
       ],
     },
   },
-];
+]

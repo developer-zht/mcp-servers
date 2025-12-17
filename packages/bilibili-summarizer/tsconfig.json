@@ -14,7 +14,15 @@
     // 但是，应用模式: 不需要生成 .d.ts (因为是可执行程序,不是库)
     "declaration": false,
     "declarationMap": false,
-    "types": ["node"]
+    // @types 包提供的全局类型声明
+    "types": ["node", "vitest/globals"],
+    // 会覆盖掉 "extends": "../../tsconfig.json" 中的 "baseUrl" 和 "paths"
+    "baseUrl": ".",
+    "paths": {
+      "@mcp-servers/shared": ["../shared/src/index.ts"],
+      "@mcp-servers/shared/*": ["../shared/src/*"],
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src/**/*"],
   // 引用依赖的包 (TypeScript Project References)

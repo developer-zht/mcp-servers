@@ -11,12 +11,16 @@
     // 保持模块结构 (不打包成单个文件)
     "module": "nodenext",
     "moduleResolution": "nodenext",
-
     // 启用复合项目模式，支持 Project References
     // 必须启用才能使用项目引用和增量编译
     "composite": true,
-
-    "types": ["node"]
+    // @types 包提供的全局类型声明
+    "types": ["node", "vitest/globals"],
+    // 会覆盖掉 "extends": "../../tsconfig.json" 中的 "baseUrl" 和 "paths"
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   // 包含的源文件
   "include": ["src/**/*"],

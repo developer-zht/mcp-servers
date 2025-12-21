@@ -1,29 +1,23 @@
+// 作为 VSCode TypeScript Server 静态检查时的配置文件
 {
   // 继承根配置
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    // 输出目录
-    "outDir": "./dist",
-    "rootDir": "./src",
-    // 库模式: 生成类型定义文件
-    "declaration": true,
-    "declarationMap": true,
-    // 保持模块结构 (不打包成单个文件)
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    // @types 包提供的全局类型声明
+    // "vitest/globals" 可写可不写，写了就是全局声明，使用时无需 import，不写则需在使用时 import，但作为工程项目，最好不写，避免全局使用一个不常用的局部类型声明
+    "types": ["node"],
     // 启用复合项目模式，支持 Project References
     // 必须启用才能使用项目引用和增量编译
-    "composite": true,
-    // @types 包提供的全局类型声明
-    "types": ["node", "vitest/globals"],
+    "composite": true
     // 会覆盖掉 "extends": "../../tsconfig.json" 中的 "baseUrl" 和 "paths"
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    // ❌ 共享库在开发时就会被多次引用，所以不要使用 alias 来简化路径，否则会因为使用引用项目的路径解析配置导致共享库内部的路径解析错误
+    // "baseUrl": ".",
+    // "paths": {
+    //   "@/*": ["src/*"]
+    // }
   },
   // 包含的源文件
-  "include": ["src/**/*"],
-  // 排除
+  "include": ["src/**/*", "tests/**/*"],
+  // 排除的文件
   "exclude": ["node_modules", "dist"]
 }

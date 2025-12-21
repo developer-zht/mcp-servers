@@ -1,3 +1,4 @@
+// 仅作为 ESLint plugin 使用的配置文件，与 TypeScript Server 和 tsc 编译无关
 {
   "extends": "./tsconfig.json",
   "include": ["scripts/", "vitest.config.ts"],

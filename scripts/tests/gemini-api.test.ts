@@ -1,8 +1,8 @@
 /**
  * 测试 Gemini API 返回数据格式
  */
-import { fetchJSON } from '../packages/shared/src/utils/http.js'
-import { getEnv } from '../packages/shared/src/env.js'
+import { fetchJSON } from '../../packages/shared/src/utils/http.js'
+import { getEnv } from '../../packages/shared/src/env.js'
 
 interface GeminiResponse {
   candidates: Array<{

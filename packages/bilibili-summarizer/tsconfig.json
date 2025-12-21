@@ -1,21 +1,16 @@
+// 作为 VSCode TypeScript Server 静态检查时的配置文件
 {
   // 继承根配置
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    // 输出目录
-    "outDir": "./dist",
-    "rootDir": "./src",
-
+    "noEmit": true,
+    // @types 包提供的全局类型声明
+    // "vitest/globals" 可写可不写，写了就是全局声明，使用时无需 import，不写则需在使用时 import，但作为工程项目，最好不写，避免全局使用一个不常用的局部类型声明
+    "types": ["node"],
     // 启用复合项目模式，支持 Project References
     // 必须启用才能使用项目引用和增量编译
     // 但是，应用模式: 不需要启用复合项目模式
     "composite": false,
-    // composite: true ⇒ 必须能生成 .d.ts
-    // 但是，应用模式: 不需要生成 .d.ts (因为是可执行程序,不是库)
-    "declaration": false,
-    "declarationMap": false,
-    // @types 包提供的全局类型声明
-    "types": ["node", "vitest/globals"],
     // 会覆盖掉 "extends": "../../tsconfig.json" 中的 "baseUrl" 和 "paths"
     "baseUrl": ".",
     "paths": {
@@ -24,7 +19,9 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "tests/**/*"],
+  // 排除的文件
+  "exclude": ["node_modules", "dist"],
   // 引用依赖的包 (TypeScript Project References)
   "references": [{ "path": "../shared" }]
 }

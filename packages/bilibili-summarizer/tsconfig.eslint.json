@@ -1,6 +1,6 @@
 // 仅作为 ESLint plugin 使用的配置文件，与 TypeScript Server 和 tsc 编译无关
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/*", "tests/**/*", "*.config.ts"],
+  "include": ["src/**/*", "tests/**/*", "*.config.ts", "index.ts"],
   "exclude": ["dist", "node_modules"]
 }

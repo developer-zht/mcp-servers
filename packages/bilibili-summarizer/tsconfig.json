@@ -19,7 +19,7 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "tests/**/*"],
+  "include": ["src/**/*", "tests/**/*", "index.ts"],
   // 排除的文件
   "exclude": ["node_modules", "dist"],
   // 引用依赖的包 (TypeScript Project References)

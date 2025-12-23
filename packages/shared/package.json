@@ -32,6 +32,8 @@
     "clean": "rm -rf dist",
     "dev": "tsc --watch"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "zod": "catalog:mcp"
+  }
 }

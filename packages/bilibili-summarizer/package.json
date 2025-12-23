@@ -31,6 +31,5 @@
     "@mcp-servers/shared": "workspace:*",
     "@modelcontextprotocol/sdk": "catalog:mcp",
     "zod": "catalog:mcp"
-  },
-  "devDependencies": {}
+  }
 }

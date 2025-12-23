@@ -14,7 +14,7 @@
     // 会覆盖掉 "extends": "../../tsconfig.json" 中的 "baseUrl" 和 "paths"
     "baseUrl": ".",
     "paths": {
-      "@mcp-servers/shared": ["../shared/src/index.ts"],
+      "@mcp-servers/shared": ["../shared/index.ts"],
       "@mcp-servers/shared/*": ["../shared/src/*"],
       "@/*": ["src/*"]
     }

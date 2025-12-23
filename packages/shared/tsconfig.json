@@ -17,7 +17,7 @@
     // }
   },
   // 包含的源文件
-  "include": ["src/**/*", "tests/**/*"],
+  "include": ["src/**/*", "tests/**/*", "index.ts"],
   // 排除的文件
   "exclude": ["node_modules", "dist"]
 }

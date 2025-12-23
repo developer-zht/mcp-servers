@@ -30,7 +30,7 @@
     /* 路径映射 - 让子包可以方便地引用其他包 */
     "baseUrl": ".",
     "paths": {
-      "@mcp-servers/shared": ["./packages/shared/src/index.ts"],
+      "@mcp-servers/shared": ["./packages/shared/index.ts"],
       "@mcp-servers/shared/*": ["./packages/shared/src/*"]
     }
   },
